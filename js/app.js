@@ -86,20 +86,24 @@ btns.forEach((btn) => {
 //scroll make sections active
 
 window.addEventListener("scroll", () => {
-    let position = "";
+    //this add event listener to user window with type of scroll
+    let position = ""; //this empty variable will store the section id
 
     sections.forEach((section) => {
-        const cur = section.offsetTop;
+        //this forEach loops over section and find section that is nearest to top of user window and give it the class that will make it active
+        const cur = section.offsetTop; //here i got help from referances like MDN to search about method useful
         const height = section.clientHeight;
         const pageY = pageYOffset + 150;
         if (pageY - 50 >= cur) {
             position = section.getAttribute("id");
         }
+        //the following loop will remove the class active from all sections and add active class for element with id stored on variable called position on previous loop
         sections.forEach((section) => {
             section.classList.remove("your-active-class");
             if (section.getAttribute("id") === position) {
                 section.classList.add("your-active-class");
             }
+            //the following loop it's job to loop over all links or btns on navbar and the first step on loop like i did before to remove active class to prevent alot of links became active and the add the active class to btn with text equal to id which stored on postion
             btns.forEach((btn) => {
                 btn.classList.remove("link__active");
                 if (btn.innerText === position) {
