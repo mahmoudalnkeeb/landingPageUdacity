@@ -40,6 +40,9 @@ h1 {
         font-size: 7em;
         margin: 2em 4rem 1em;
     }
+    section.your-active-class {
+        height: 100vh;
+    }
 }
 
 h2 {

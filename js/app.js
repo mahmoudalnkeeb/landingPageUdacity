@@ -84,5 +84,23 @@ btns.forEach((btn) => {
         // to Add
         // class
         // active
+        const id = btn.innerText;
+        // sections.forEach((section) => {
+        const section = document.getElementById(id);
+        section.getAttribute("class") == "your-active-class";
+        section.classList.add("your-active-class");
+        sections.forEach((section) => {
+            const not = section.getAttribute("id");
+            if (not !== id) {
+                section.classList.remove("your-active-class");
+            }
+        });
+
+        // if (section.getAttribute("class") == "your-active-class") {
+        //     section.classList.remove("your-active-class");
+        // } else {
+        //     section.classList.add("your-active-class");
+        // }
+        // });
     });
 });
