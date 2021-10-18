@@ -29,6 +29,7 @@ const sections = document.querySelectorAll("section");
 const sectionOne = document.querySelector("#section1");
 const sectionTwo = document.querySelector("#section2");
 const sectionThree = document.querySelector("#section3");
+const listLink = document.querySelectorAll("li a");
 
 /**
  * End Global Variables
@@ -66,12 +67,6 @@ const btns = document.querySelectorAll(".menu__link");
 btns.forEach((btn) => {
     // addEventListener
     btn.addEventListener("click", function() {
-        /*
-    
-            function to Add class active
-    
-            */
-
         //because on 1st function i'm getting my link innerText from section id i will reverse that to use it to identfy the section by id
 
         const id = btn.innerText;
@@ -84,6 +79,34 @@ btns.forEach((btn) => {
             if (not !== id) {
                 section.classList.remove("your-active-class");
             }
+        });
+    });
+});
+
+//scroll make sections active
+
+window.addEventListener("scroll", () => {
+    let position = "";
+
+    sections.forEach((section) => {
+        const cur = section.offsetTop;
+        const height = section.clientHeight;
+        const pageY = pageYOffset + 150;
+        if (pageY - 50 >= cur) {
+            position = section.getAttribute("id");
+        }
+        sections.forEach((section) => {
+            section.classList.remove("your-active-class");
+            if (section.getAttribute("id") === position) {
+                section.classList.add("your-active-class");
+            }
+            btns.forEach((btn) => {
+                btn.classList.remove("link__active");
+                if (btn.innerText === position) {
+                    btn.classList.add("link__active");
+                }
+                console.log(btn);
+            });
         });
     });
 });
