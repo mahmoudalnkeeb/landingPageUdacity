@@ -114,7 +114,7 @@ window.addEventListener("scroll", () => {
     });
 });
 
-//smooth scroll to top
+//smooth scroll to top button
 const btnTop = document.querySelector("#btnTop");
 
 window.addEventListener("scroll", () => {
@@ -136,8 +136,11 @@ function scrollTop() {
         behavior: "smooth",
     });
 }
-window.scroll({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
+
+//drop menu small screen
+
+const drop = document.querySelector(".btnDrop");
+
+drop.addEventListener("click", () => {
+    navList.classList.toggle("closed");
 });
