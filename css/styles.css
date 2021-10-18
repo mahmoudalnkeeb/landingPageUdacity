@@ -96,6 +96,11 @@ section {
     position: relative;
 }
 
+.menu__link:hover {
+    color: #eee;
+    font-weight: bolder;
+}
+
 .link__active {
     display: block;
     padding: 1em;
