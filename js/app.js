@@ -59,48 +59,31 @@ function chkSctions() {
 }
 chkSctions();
 
-// Add class 'active' to section when near top of viewport
-
-// Scroll to anchor ID using scrollTO event
-
-// }
-/**
- * End Main Functions
- * Begin Events
- *
- */
-
-// Build menu
-
-// Scroll to section on link click
-
-// Set sections as active
+// addEventListener to menu__link and click on it make target section as active
 
 const btns = document.querySelectorAll(".menu__link");
 
 btns.forEach((btn) => {
+    // addEventListener
     btn.addEventListener("click", function() {
-        // function
-        // to Add
-        // class
-        // active
+        /*
+    
+            function to Add class active
+    
+            */
+
+        //because on 1st function i'm getting my link innerText from section id i will reverse that to use it to identfy the section by id
+
         const id = btn.innerText;
-        // sections.forEach((section) => {
         const section = document.getElementById(id);
         section.getAttribute("class") == "your-active-class";
         section.classList.add("your-active-class");
+        //this to check if there is onther active sections and make it unactive
         sections.forEach((section) => {
             const not = section.getAttribute("id");
             if (not !== id) {
                 section.classList.remove("your-active-class");
             }
         });
-
-        // if (section.getAttribute("class") == "your-active-class") {
-        //     section.classList.remove("your-active-class");
-        // } else {
-        //     section.classList.add("your-active-class");
-        // }
-        // });
     });
 });
