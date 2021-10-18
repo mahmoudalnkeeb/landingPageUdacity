@@ -270,6 +270,12 @@ section.your-active-class .landing__container::after {
     border: none;
     outline: none;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+#btnTop:hover {
+    background-color: #95a5a6;
+    color: black;
 }
 
 
