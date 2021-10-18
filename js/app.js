@@ -115,8 +115,11 @@ window.addEventListener("scroll", () => {
     });
 });
 
-btns.onclick = () => {
-    window.scrollTo({
-        behavior: "smooth",
-    });
-};
+//smooth scroll
+btns.forEach((btn) => {
+    btn.addEventListener("click", smooth);
+
+    function smooth() {
+        window.scroll({ behavior: "smooth" });
+    }
+});
