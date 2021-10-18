@@ -114,3 +114,9 @@ window.addEventListener("scroll", () => {
         });
     });
 });
+
+btns.onclick = () => {
+    window.scrollTo({
+        behavior: "smooth",
+    });
+};
