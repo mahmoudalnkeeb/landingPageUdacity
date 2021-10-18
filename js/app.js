@@ -93,7 +93,7 @@ window.addEventListener("scroll", () => {
         //this forEach loops over section and find section that is nearest to top of user window and give it the class that will make it active
         const cur = section.offsetTop; //here i got help from referances like MDN to search about method useful
         const height = section.clientHeight;
-        const pageY = pageYOffset + 150;
+        const pageY = pageYOffset + 100;
         if (pageY - 50 >= cur) {
             position = section.getAttribute("id");
         }
@@ -114,11 +114,30 @@ window.addEventListener("scroll", () => {
     });
 });
 
-//smooth scroll 1
-btns.forEach((btn) => {
-    btn.addEventListener("click", smooth);
+//smooth scroll to top
+const btnTop = document.querySelector("#btnTop");
 
-    function smooth() {
-        window.scroll({ behavior: "smooth" });
+window.addEventListener("scroll", () => {
+    if (
+        document.documentElement.scrollTop > 50 ||
+        document.documentElement.scrollTop > 50
+    ) {
+        btnTop.style.display = "block";
+    } else {
+        btnTop.style.display = "none";
     }
+});
+btnTop.addEventListener("click", scrollTop);
+
+function scrollTop() {
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
+}
+window.scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
 });
