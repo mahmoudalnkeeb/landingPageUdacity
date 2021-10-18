@@ -109,7 +109,6 @@ window.addEventListener("scroll", () => {
                 if (btn.innerText === position) {
                     btn.classList.add("link__active");
                 }
-                console.log(btn);
             });
         });
     });
