@@ -1,13 +1,21 @@
 # Landing Page Project
 
-## Table of Contents
+## Contents
 
-* [Instructions](#instructions)
+- [whatIsMyProject](#whatIsMyProject)
 
-## Instructions
+- [website](#website)
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## whatIsMyProject
 
-To get started, open `js/app.js` and start building out the app's functionality
+this project is a **landing page with dynamic navigation**
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+- what is contains
+  - active state system to make visitors know what which part of your page they are surfing
+  - four section and dynamic navigation system
+  - smooth scrolling
+  - scroll to top smoothly button
+
+## website
+
+you can see this website by click [**here**](https://landingpageud.netlify.app/)
