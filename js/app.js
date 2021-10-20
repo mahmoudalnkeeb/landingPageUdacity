@@ -30,6 +30,7 @@ const sectionOne = document.querySelector("#section1");
 const sectionTwo = document.querySelector("#section2");
 const sectionThree = document.querySelector("#section3");
 const listLink = document.querySelectorAll("li a");
+const header = document.querySelector(".page__header");
 
 /**
  * End Global Variables
@@ -54,8 +55,8 @@ function chkSctions() {
         link.className = "menu__link";
         // new loop
         link.innerText = sections[i].id;
-        const attr = "#" + sections[i].id;
-        link.setAttribute("href", attr);
+        // const attr = "#" + sections[i].id;
+        // link.setAttribute("href", attr);
     }
 }
 chkSctions();
@@ -70,15 +71,25 @@ btns.forEach((btn) => {
         //because on 1st function i'm getting my link innerText from section id i will reverse that to use it to identfy the section by id
 
         const id = btn.innerText;
-        const section = document.getElementById(id);
-        section.getAttribute("class") == "your-active-class";
-        section.classList.add("your-active-class");
+        const sectiona = document.getElementById(id);
+        sectiona.getAttribute("class") == "your-active-class";
+        sectiona.classList.add("your-active-class");
         //this to check if there is onther active sections and make it unactive
         sections.forEach((section) => {
             const not = section.getAttribute("id");
             if (not !== id) {
                 section.classList.remove("your-active-class");
             }
+        });
+
+        sections.forEach((section) => {
+            //looping over all sections to get their locations on page
+            section = sectiona; //specify section by make it equal to needed section id
+            const sectionNeeded = section.offsetTop;
+            window.scroll({
+                top: sectionNeeded + 100,
+                behavior: "smooth",
+            });
         });
     });
 });
@@ -93,7 +104,7 @@ window.addEventListener("scroll", () => {
         //this forEach loops over section and find section that is nearest to top of user window and give it the class that will make it active
         const cur = section.offsetTop; //here i got help from referances like MDN to search about method useful
         const height = section.clientHeight;
-        const pageY = pageYOffset + 100;
+        const pageY = pageYOffset + 200;
         if (pageY - 50 >= cur) {
             position = section.getAttribute("id");
         }
@@ -144,3 +155,27 @@ const drop = document.querySelector(".btnDrop");
 drop.addEventListener("click", () => {
     navList.classList.toggle("closed");
 });
+
+//header styling when scroll over items
+// window.addEventListener("scroll", () => {
+//     if (
+//         document.documentElement.scrollTop > 150 ||
+//         document.documentElement.scrollTop > 150
+//     ) {
+//         header.style.backgroundColor = "transparent";
+//         const link = document.querySelectorAll(".menu__link");
+//         for (let i = 0; i < link.length; i++) {
+//             const li = link[i];
+//             li.style.color = "black";
+//             li.style.outlineColor = "black";
+//         }
+//     } else {
+//         header.style.backgroundColor = "#000";
+//         const link = document.querySelectorAll(".menu__link");
+//         for (let i = 0; i < link.length; i++) {
+//             const li = link[i];
+//             li.style.color = "white";
+//             li.style.outlineColor = "white";
+//         }
+//     }
+// }); i remove it cuz it make some issues on mobile
