@@ -156,26 +156,14 @@ drop.addEventListener("click", () => {
     navList.classList.toggle("closed");
 });
 
-//header styling when scroll over items
-// window.addEventListener("scroll", () => {
-//     if (
-//         document.documentElement.scrollTop > 150 ||
-//         document.documentElement.scrollTop > 150
-//     ) {
-//         header.style.backgroundColor = "transparent";
-//         const link = document.querySelectorAll(".menu__link");
-//         for (let i = 0; i < link.length; i++) {
-//             const li = link[i];
-//             li.style.color = "black";
-//             li.style.outlineColor = "black";
-//         }
-//     } else {
-//         header.style.backgroundColor = "#000";
-//         const link = document.querySelectorAll(".menu__link");
-//         for (let i = 0; i < link.length; i++) {
-//             const li = link[i];
-//             li.style.color = "white";
-//             li.style.outlineColor = "white";
-//         }
-//     }
-// }); i remove it cuz it make some issues on mobile
+//i was thinking that i need black navbar but at the same time it's covering content so way not to make funaction to give it some transparency when user scroll down
+window.addEventListener("scroll", () => {
+    if (
+        document.documentElement.scrollTop > 150 ||
+        document.documentElement.scrollTop > 150
+    ) {
+        header.style.backgroundColor = "#00000080";
+    } else {
+        header.style.backgroundColor = "#000";
+    }
+});
