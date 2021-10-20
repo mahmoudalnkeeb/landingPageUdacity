@@ -156,7 +156,9 @@ drop.addEventListener("click", () => {
     navList.classList.toggle("closed");
 });
 
-//i was thinking that i need black navbar but at the same time it's covering content so way not to make funaction to give it some transparency when user scroll down
+//i was thinking that i need black navbar but at the same
+//time it's covering content so way not to make funaction
+//to give it some transparency when user scroll down
 window.addEventListener("scroll", () => {
     if (
         document.documentElement.scrollTop > 150 ||
